@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e9f4f3b12a0ed12d884fa93"},"Id":"e26cb73b-791f-484f-8a6e-1b8cf4f81adf","Description":"Read Only","CreatedDate":"4/17/20 10:31","UpdatedDate":"4/17/20 10:31"}
+{"_id":{"$oid":"5e9f4f3b12a0ed12d884fa94"},"Id":"8c0cb96e-4553-4b1f-b293-0d9ad2dd0f53","Description":"Read/Write","CreatedDate":"4/17/20 10:31","UpdatedDate":"4/17/20 10:31"}
+{"_id":{"$oid":"5e9f4f3b12a0ed12d884fa95"},"Id":"71435fb0-a558-409f-b48b-0054d36bfcea","Description":"Admin","CreatedDate":"4/17/20 10:31","UpdatedDate":"4/17/20 10:31"}
