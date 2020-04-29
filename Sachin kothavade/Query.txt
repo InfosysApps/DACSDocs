@@ -1,0 +1,38 @@
+db.ClosureAccounts.aggregate(
+    [
+        { 
+            "$lookup" : {
+                      from: "Transactions",
+                      localField: "TransactionId",
+                      foreignField: "Id",
+                      as: "ClosureAccountInfo"
+                      }
+
+        }, 
+        { 
+            $unwind: {
+                       path: "$ClosureAccountInfo",
+                       preserveNullAndEmptyArrays: true
+                     }
+        },
+	{
+  		$lookup: {
+    		from: "Account",
+    		localField: "ClosureAccountInfo.AccountId",
+    		foreignField: "AccountId",
+    		as: "CombineResult",
+  			}
+	}, 
+        { 
+            "$project" : {
+                "first" : 1.0, 
+                "last" : 1.0, 
+                "CombineResult.CustomerId" : 1.0   ,
+		"Status" : 1.0 ,
+		"ClosureAccountInfo.AccountId" : 1.0 ,  
+		"CombineResult.AccountType" : 1.0   ,   
+		"CombineResult.AccountBalance" : 1.0   ,       
+            }
+        }
+    ]
+);
